@@ -1,3 +1,3 @@
-# React Typescript App
+# Portfolio Website
 
-This is app is a practice application built with ReactJS, Typescript and Chakra UI.
+This is my portfolio website built with React and Typescript.
