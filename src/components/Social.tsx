@@ -7,7 +7,7 @@ interface Props {}
 
 export const Social: React.FC<Props> = () => {
   return (
-    <HStack spacing="24">
+    <HStack>
       {/* <Icon as={FaFacebookF} boxSize="50" />
 			<Icon as={FaGoogle} boxSize="50" />
 			<Icon as={FaSpotify} boxSize="50" />

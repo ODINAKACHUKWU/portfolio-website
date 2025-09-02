@@ -27,8 +27,8 @@ export const Header: React.FC<Props> = () => {
         h="300px"
         alignSelf="flex-end"
       />
-      <Flex direction="column" spacing="200px" p="32" alignSelf="flex-start">
-        <Box mt={16} align="flex-start">
+      <Flex direction="column" p="32" alignSelf="flex-start">
+        <Box mt={16}>
           <Text fontSize="5xl" fontWeight="semibold">
             Hi! I am
           </Text>

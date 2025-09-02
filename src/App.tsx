@@ -1,5 +1,5 @@
 import React from 'react';
-import { Flex, VStack, Heading, Spacer, IconButton } from '@chakra-ui/react';
+import { Flex, VStack, Heading, IconButton, HStack } from '@chakra-ui/react';
 import { Sun, Moon, Instagram, Github, Linkedin } from 'lucide-react';
 import { useColorMode } from './utils/chakra-ui/color-mode';
 import { Header } from './components/Header';
@@ -17,31 +17,21 @@ export const App: React.FC = () => {
         <Heading ml="8" size="md" fontWeight="semibold" color="cyan.400">
           Heading
         </Heading>
-        <Spacer></Spacer>
-        <IconButton
-          aria-label="Linkedin"
-          icon={<Linkedin />}
-          isRound={true}
-        ></IconButton>
-        <IconButton
-          aria-label="Instagram"
-          ml={2}
-          icon={<Instagram />}
-          isRound={true}
-        ></IconButton>
-        <IconButton
-          aria-label="Github"
-          ml={2}
-          icon={<Github />}
-          isRound={true}
-        ></IconButton>
-        <IconButton
-          aria-label="Color mode"
-          ml={8}
-          icon={isDark ? <Sun /> : <Moon />}
-          isRound={true}
-          onClick={toggleColorMode}
-        ></IconButton>
+
+        <HStack>
+          <IconButton aria-label="Linkedin">
+            <Linkedin />
+          </IconButton>
+          <IconButton aria-label="Instagram">
+            <Instagram />
+          </IconButton>
+          <IconButton aria-label="Github">
+            <Github />
+          </IconButton>
+          <IconButton aria-label="Color mode" onClick={toggleColorMode}>
+            {isDark ? <Sun /> : <Moon />}
+          </IconButton>
+        </HStack>
       </Flex>
       <Header></Header>
       <Social></Social>
