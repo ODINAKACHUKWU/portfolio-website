@@ -55,11 +55,10 @@ export const Home: React.FC = () => {
           (Node.js, React, and TypeScript).
         </Text>
         <Text lineHeight="24px" fontWeight={300} mb={10}>
-          I'm happy to share more about my work and experiences.{' '}
-          <ChakraLink asChild>
+          Want to know more about me?{' '}
+          <ChakraLink asChild variant="underline">
             <Link to="#">Click here</Link>
-          </ChakraLink>{' '}
-          to know more about me.
+          </ChakraLink>
         </Text>
         <Text lineHeight="24px" fontWeight={300} mb={3}>
           Let’s connect! 🤝
