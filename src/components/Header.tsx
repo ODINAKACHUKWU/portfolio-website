@@ -10,6 +10,8 @@ import {
   Image
 } from '@chakra-ui/react';
 
+import image1 from '../assets/images/solo-1.png';
+
 interface Props {}
 
 export const Header: React.FC<Props> = () => {
@@ -57,10 +59,10 @@ export const Header: React.FC<Props> = () => {
           mt={12}
           mb={12}
           borderRadius="full"
-          bgColor="transparent"
+          bgColor="red.100"
           boxShadow="lg"
           boxSize="300px"
-          src="https://avatars.githubusercontent.com/u/41029613?v=4"
+          src={image1}
           alt="Profile picture"
         />
       </Flex>

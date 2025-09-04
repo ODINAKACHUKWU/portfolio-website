@@ -5,6 +5,7 @@ import { useColorMode } from './utils/chakra-ui/color-mode';
 import { Header } from './components/Header';
 import { Social } from './components/Social';
 import { Profile } from './components/Profile';
+import { Logo } from './components/Logo/Logo';
 
 export const App: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -17,6 +18,7 @@ export const App: React.FC = () => {
         <Heading ml="8" size="md" fontWeight="semibold" color="cyan.400">
           Heading
         </Heading>
+        <Logo />
 
         <HStack>
           <IconButton aria-label="Linkedin">

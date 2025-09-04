@@ -8,6 +8,7 @@ import {
 } from '@chakra-ui/react';
 import { ColorModeProvider } from './color-mode';
 import type { ColorModeProviderProps } from './color-mode';
+import { textStyles } from './text-styles';
 
 const config = defineConfig({
   globalCss: {
@@ -19,8 +20,11 @@ const config = defineConfig({
       padding: 0
     },
     body: {
-      fontFamily: `'Inter', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'`
+      fontFamily: `'Poppins', 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif'`
     }
+  },
+  theme: {
+    textStyles
   }
 });
 
