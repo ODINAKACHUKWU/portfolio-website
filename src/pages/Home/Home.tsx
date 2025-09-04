@@ -8,14 +8,11 @@ import {
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
 import { NavBar } from '../../components';
-import { useColorMode } from '../../utils/chakra-ui/color-mode';
 
 import profilePicture from '../../assets/images/primary-profile-pic.jpg';
 import { Facebook, Twitter, Instagram, Linkedin, Github } from 'lucide-react';
 
 export const Home: React.FC = () => {
-  //   const { ColorMode } = useColorMode();
-
   return (
     <Box
       display="flex"

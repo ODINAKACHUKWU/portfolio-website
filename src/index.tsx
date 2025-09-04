@@ -1,6 +1,5 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { App } from './App';
 import { Provider } from './utils/chakra-ui/provider';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { BaseRoute } from './routes/BaseRoute';
