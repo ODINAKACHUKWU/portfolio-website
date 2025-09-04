@@ -11,7 +11,7 @@ import { NavBar } from '../../components';
 import { useColorMode } from '../../utils/chakra-ui/color-mode';
 
 import profilePicture from '../../assets/images/primary-profile-pic.jpg';
-import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Linkedin, Github } from 'lucide-react';
 
 export const Home: React.FC = () => {
   //   const { ColorMode } = useColorMode();
@@ -81,6 +81,11 @@ export const Home: React.FC = () => {
           <ChakraLink asChild>
             <Link to="#">
               <Linkedin />
+            </Link>
+          </ChakraLink>
+          <ChakraLink asChild>
+            <Link to="#">
+              <Github />
             </Link>
           </ChakraLink>
         </HStack>
