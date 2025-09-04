@@ -30,7 +30,7 @@ export const NavBar: React.FC = () => {
         px={{ base: 4, md: 8 }}
       >
         <Box>
-          <Logo color={isLight ? 'teal.600' : 'teal.200'} />
+          <Logo color={isLight ? 'black' : 'yellow.500'} />
         </Box>
         <HStack>
           <IconButton
