@@ -27,18 +27,21 @@ export const Home: React.FC = () => {
       {/* Main Content */}
       {/* Left Side: Text */}
       <Box
-        display={{ base: 'none', md: 'block' }}
+        display={{ base: 'none', md: 'flex' }}
+        flexDirection="column"
         w="50%"
         order={{ base: 2, md: 1 }}
-        px={20}
-        pt="180px"
+        px={{ base: 4, md: 8, lg: 20 }}
+        pt="200px"
         pb={8}
       >
         <Heading
           as="h1"
           textStyle="headline-1"
           textTransform="uppercase"
+          textWrap="nowrap"
           mb={14}
+          fontSize={{ base: '2xl', sm: '3xl', md: '4xl', lg: '7xl' }}
         >
           SOLOMON
         </Heading>
@@ -51,15 +54,17 @@ export const Home: React.FC = () => {
           building web applications with Ruby (Ruby on Rails) and JavaScript
           (Node.js, React, and TypeScript).
         </Text>
-        <Text lineHeight="24px" fontWeight={300} mb={6}>
+        <Text lineHeight="24px" fontWeight={300} mb={10}>
           I'm happy to share more about my work and experiences.{' '}
           <ChakraLink asChild>
             <Link to="#">Click here</Link>
           </ChakraLink>{' '}
           to know more about me.
         </Text>
-        <HStack>
+        <Text lineHeight="24px" fontWeight={300} mb={3}>
           Let’s connect! 🤝
+        </Text>
+        <HStack>
           <ChakraLink asChild>
             <Link to="#">
               <Twitter />
@@ -86,6 +91,10 @@ export const Home: React.FC = () => {
             </Link>
           </ChakraLink>
         </HStack>
+        <Text fontSize="sm" fontWeight={300} mt="auto">
+          &copy; {new Date().getFullYear()} Solomon Ezeobika. All Rights
+          Reserved.
+        </Text>
       </Box>
 
       {/* Right Side: Image */}

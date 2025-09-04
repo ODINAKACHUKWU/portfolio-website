@@ -27,7 +27,7 @@ export const NavBar: React.FC = () => {
         alignItems="center"
         justifyContent="space-between"
         py={5}
-        px={8}
+        px={{ base: 4, md: 8 }}
       >
         <Box>
           <Logo color={isLight ? 'teal.600' : 'teal.200'} />
