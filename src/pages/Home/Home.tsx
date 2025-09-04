@@ -61,7 +61,7 @@ export const Home: React.FC = () => {
           </ChakraLink>
         </Text>
         <Text lineHeight="24px" fontWeight={300} mb={3}>
-          Let’s connect! 🤝
+          Don't be a stranger! 🤝
         </Text>
         <HStack>
           <ChakraLink asChild>
