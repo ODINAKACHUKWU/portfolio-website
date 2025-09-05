@@ -1,5 +1,5 @@
+import { useState } from 'react';
 import {
-  CloseButton,
   Portal,
   IconButton,
   DrawerRoot,
@@ -10,28 +10,44 @@ import {
   DrawerFooter,
   Drawer,
   DrawerContent,
-  DrawerCloseTrigger
+  Box,
+  Text
 } from '@chakra-ui/react';
-import { LuAlignLeft } from 'react-icons/lu';
+import { LuAlignLeft, LuX } from 'react-icons/lu';
 import { useColorMode } from '../../utils/chakra-ui/color-mode';
 import { AvatarIllustration } from './components/AvatarIllustration';
 import { Socials } from '..';
 
 const Trigger: any = DrawerTrigger;
 const Positioner: any = DrawerPositioner;
-const CloseTrigger: any = DrawerCloseTrigger;
 const Content: any = DrawerContent;
 
 export const Menu: React.FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const { isLight } = useColorMode();
 
+  const handleCloseMenu = () => {
+    setIsOpen(false);
+  };
+
+  const handleOpenMenu = () => {
+    setIsOpen(true);
+  };
+
   return (
-    <DrawerRoot size="full">
+    <DrawerRoot
+      open={isOpen}
+      size="full"
+      aria-label="Navigation Menu"
+      initialFocusEl={() => null}
+      onEscapeKeyDown={handleCloseMenu}
+    >
       <Trigger asChild>
         <IconButton
           aria-label="Menu"
           variant={isLight ? 'solid' : 'ghost'}
           rounded="full"
+          onClick={handleOpenMenu}
         >
           <LuAlignLeft />
         </IconButton>
@@ -40,8 +56,29 @@ export const Menu: React.FC = () => {
         <Drawer.Backdrop />
         <Positioner>
           <Content>
-            <DrawerHeader p={{ base: 5, md: 12 }}>
-              <AvatarIllustration />
+            <Box pos="absolute" bottom={0} right={0}>
+              <Text
+                fontSize={{ base: '6rem', md: '12.5rem' }}
+                fontFamily="'Gravitas One', 'Inter', 'Helvetica Neue', 'Helvetica', 'Arial', 'monospace', 'sans-serif'"
+                opacity={0.03}
+                lineHeight={0.8}
+              >
+                Solomon
+              </Text>
+            </Box>
+            <DrawerHeader
+              p={{ base: 5, md: 12 }}
+              justifyContent="space-between"
+            >
+              <AvatarIllustration onImageClick={handleCloseMenu} />
+              <IconButton
+                aria-label="Close menu"
+                variant="ghost"
+                rounded="full"
+                onClick={handleCloseMenu}
+              >
+                <LuX />
+              </IconButton>
             </DrawerHeader>
             <DrawerBody p={{ base: 5, md: 12 }}>
               {/* Menu items go here */}
@@ -49,9 +86,6 @@ export const Menu: React.FC = () => {
             <DrawerFooter justifyContent="flex-start" p={{ base: 5, md: 12 }}>
               <Socials />
             </DrawerFooter>
-            <CloseTrigger asChild>
-              <CloseButton rounded="full" />
-            </CloseTrigger>
           </Content>
         </Positioner>
       </Portal>
