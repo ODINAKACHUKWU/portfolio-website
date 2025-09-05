@@ -1,7 +1,7 @@
 import { Box, HStack, IconButton } from '@chakra-ui/react';
-import { Logo } from '../Logo/Logo';
+import { Logo, Menu } from '..';
 import { useColorMode } from '../../utils/chakra-ui/color-mode';
-import { Moon, Sun, Menu } from 'lucide-react';
+import { LuMoon, LuSun } from 'react-icons/lu';
 
 export const NavBar: React.FC = () => {
   const { toggleColorMode, isLight } = useColorMode();
@@ -30,7 +30,12 @@ export const NavBar: React.FC = () => {
         px={{ base: 4, md: 8 }}
       >
         <Box>
-          <Logo color={isLight ? 'black' : 'yellow.500'} />
+          <Logo
+            color={{
+              base: 'teal.200',
+              md: isLight ? 'teal.600' : 'teal.200'
+            }}
+          />
         </Box>
         <HStack>
           <IconButton
@@ -39,15 +44,9 @@ export const NavBar: React.FC = () => {
             variant={isLight ? 'solid' : 'ghost'}
             rounded="full"
           >
-            {isLight ? <Moon /> : <Sun />}
+            {isLight ? <LuMoon /> : <LuSun />}
           </IconButton>
-          <IconButton
-            aria-label="Menu"
-            variant={isLight ? 'solid' : 'ghost'}
-            rounded="full"
-          >
-            <Menu />
-          </IconButton>
+          <Menu />
         </HStack>
       </Box>
     </Box>

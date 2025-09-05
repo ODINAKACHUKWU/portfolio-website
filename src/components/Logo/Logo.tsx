@@ -1,7 +1,14 @@
 import { Text } from '@chakra-ui/react';
 
+type Color = {
+  base?: string;
+  sm?: string;
+  md?: string;
+  lg?: string;
+};
+
 interface LogoProps {
-  color?: string;
+  color?: string | Color;
 }
 
 export const Logo: React.FC<LogoProps> = ({ color = 'teal.400' }) => {

@@ -3,16 +3,17 @@ import {
   Text,
   Image,
   Heading,
-  Link as ChakraLink,
-  HStack
+  Link as ChakraLink
 } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import { NavBar } from '../../components';
+import { Copyright, NavBar, Socials } from '../../components';
+import { useColorMode } from '../../utils/chakra-ui/color-mode';
 
 import profilePicture from '../../assets/images/primary-profile-pic.jpg';
-import { Facebook, Twitter, Instagram, Linkedin, Github } from 'lucide-react';
 
 export const Home: React.FC = () => {
+  const { isLight } = useColorMode();
+
   return (
     <Box
       display="flex"
@@ -63,37 +64,8 @@ export const Home: React.FC = () => {
         <Text lineHeight="24px" fontWeight={300} mb={3}>
           Don't be a stranger! 🤝
         </Text>
-        <HStack>
-          <ChakraLink asChild>
-            <Link to="#">
-              <Twitter />
-            </Link>
-          </ChakraLink>
-          <ChakraLink asChild>
-            <Link to="#">
-              <Facebook />
-            </Link>
-          </ChakraLink>
-          <ChakraLink asChild>
-            <Link to="#">
-              <Instagram />
-            </Link>
-          </ChakraLink>
-          <ChakraLink asChild>
-            <Link to="#">
-              <Linkedin />
-            </Link>
-          </ChakraLink>
-          <ChakraLink asChild>
-            <Link to="#">
-              <Github />
-            </Link>
-          </ChakraLink>
-        </HStack>
-        <Text fontSize="sm" fontWeight={300} mt="auto">
-          &copy; {new Date().getFullYear()} Solomon Ezeobika. All Rights
-          Reserved.
-        </Text>
+        <Socials />
+        <Copyright />
       </Box>
 
       {/* Right Side: Image */}
@@ -120,7 +92,10 @@ export const Home: React.FC = () => {
           left={0}
           w="100%"
           h="100%"
-          bg={{ base: 'blackAlpha.800', md: 'blackAlpha.700' }}
+          bg={{
+            base: 'blackAlpha.800',
+            md: isLight ? 'blackAlpha.400' : 'blackAlpha.600'
+          }}
           zIndex={1}
           pointerEvents="none"
         />
