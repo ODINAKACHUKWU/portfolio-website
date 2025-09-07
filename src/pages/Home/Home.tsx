@@ -48,7 +48,7 @@ export const Home: React.FC = () => {
         </Heading>
         <Text lineHeight="24px" fontWeight={300} mb={6}>
           👋 Hi, I am Odinakachukwu Solomon Ezeobika - but you can call me
-          Solomon. 😜
+          Solomon. 😉
         </Text>
         <Text lineHeight="24px" fontWeight={300} mb={6}>
           I am a Full-Stack Software Engineer with 6+ years of experience

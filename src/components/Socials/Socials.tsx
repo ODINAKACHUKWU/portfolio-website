@@ -6,7 +6,8 @@ import {
   FaGithub,
   FaInstagram,
   FaLinkedinIn,
-  FaMediumM
+  FaMediumM,
+  FaTiktok
 } from 'react-icons/fa';
 import { SiSessionize } from 'react-icons/si';
 
@@ -61,6 +62,13 @@ export const Socials: React.FC = () => (
       <Link to="https://sessionize.com/odinakachukwu-ezeobika" target="_blank">
         <Icon size="sm">
           <SiSessionize />
+        </Icon>
+      </Link>
+    </ChakraLink>
+    <ChakraLink asChild>
+      <Link to="https://tiktok.com/@debig_solo" target="_blank">
+        <Icon size="sm">
+          <FaTiktok />
         </Icon>
       </Link>
     </ChakraLink>
