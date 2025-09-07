@@ -17,6 +17,7 @@ import { LuAlignLeft, LuX } from 'react-icons/lu';
 import { useColorMode } from '../../utils/chakra-ui/color-mode';
 import { AvatarIllustration } from './components/AvatarIllustration';
 import { Socials } from '..';
+import { MenuList } from './components/MenuList';
 
 const Trigger: any = DrawerTrigger;
 const Positioner: any = DrawerPositioner;
@@ -67,7 +68,8 @@ export const Menu: React.FC = () => {
               </Text>
             </Box>
             <DrawerHeader
-              p={{ base: 5, md: 12 }}
+              px={{ base: 5, md: 12 }}
+              pt={{ base: 5, md: 12 }}
               justifyContent="space-between"
             >
               <AvatarIllustration onImageClick={handleCloseMenu} />
@@ -80,8 +82,8 @@ export const Menu: React.FC = () => {
                 <LuX />
               </IconButton>
             </DrawerHeader>
-            <DrawerBody p={{ base: 5, md: 12 }}>
-              {/* Menu items go here */}
+            <DrawerBody px={{ base: 5, md: 12 }} pt={{ base: 5, md: 10 }}>
+              <MenuList />
             </DrawerBody>
             <DrawerFooter justifyContent="flex-start" p={{ base: 5, md: 12 }}>
               <Socials />
